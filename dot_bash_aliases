@@ -1,0 +1,132 @@
+#!/bin/bash
+
+####################
+### BASH ALIASES ###
+####################
+
+HISTSIZE=1000000000
+HISTFILESIZE=1000000000
+
+# Default Flags
+alias grep='grep --color=auto'
+alias bat='bat --color=always --paging=always --decorations=always'
+alias bat-plain='bat --plain --no-paging'
+alias code='code -n'
+alias sl='sl -acdew8'
+
+# Editing
+export EDITOR='micro'
+alias edit="${EDITOR}"
+
+# Pager
+export PAGER='less -I -K --use-color --wordwrap'
+export MANPAGER="${PAGER}"
+alias pager="${PAGER}"
+function pagify { "$@" | pager ;}
+alias less="${PAGER} -N"
+function lessify { "$@" | less ;}
+
+# Aliases & Shortcuts & RC-files Management
+function aliases { alias "$@" | less ;}
+function delalias { if alias "$1" > /dev/null 2>&1; then unalias "$1"; fi ;}
+alias aliases-apply='source ~/.bash_aliases'
+alias aliases-edit='edit ~/.bash_aliases && aliases-apply'
+alias shrc-apply='start-fg bash'
+alias shrc-edit='edit ~/.bashrc && shrc-apply'
+alias fzfrc-edit='edit ~/.fzfrc'
+alias starship-config='edit ~/.config/starship.toml'
+alias chezmoi='chezmoi --interactive'
+alias chezmoish='start-ntw chezmoi cd'
+
+# Package Management
+alias reflector-sync='sudo reflector --protocol https --sort score --save /etc/pacman.d/mirrorlist && yay -Syy'
+alias yay-orphans-list='yay -Qdt'
+alias yay-orphans-remove='yay -Rs $(yay -Qdtq)'
+function pacman-search { pacman -Ssl | fzf -q "$1" -m --preview 'pacman -Si {1}' ;}
+function yay-search { yay -Ssl | fzf -q "$1" -m --preview 'yay -Si {1}' ;}
+
+# Docs Navigation
+function help { lessify "$@" --help ;}
+function tldr { command tldr -m "$@" | bat-plain --language=markdown | less ;}
+function cheatsheet { cht.sh "$@" | less -n ;}
+function cheatshell { start-bg kitty cht.sh --shell "$1" ;}
+
+# Navigation
+alias eza='eza --color=always --classify=always --icons=automatic --header'
+function cdo { (cd "$@" && files-here ) ;}
+alias l='ls -l'
+alias la='ls -la'
+alias ls='eza -g'
+alias lsa='ls -a'
+alias lD='ls -lD'
+alias lDa='ls -lDa'
+alias lF='ls -lf'
+alias lFa='ls -lfa'
+alias lr='l -RT'
+alias lar='la -RT'
+alias lsr='ls -RT'
+alias lsar='lsa -RT'
+alias lDr='lDr -RT'
+alias lDar='lDar -RT'
+alias lFr='lFr -RT'
+alias lFar='lFar -RT'
+delalias lDD # using 'lDa' alias instead
+delalias lS # unused
+delalias lT # unused
+delalias ldot # unused
+delalias ll # obsolete due to '--header' in 'eza' alias
+delalias lsd # unused
+delalias lsdl # unused
+
+# Git
+alias lzgit='lazygit'
+alias gdh='git diff HEAD'
+
+# Periodic Execution
+alias watch='watch -n 1'
+alias watch-f='watch -n 0.1'
+alias watch-s='watch -n 10'
+
+# Text Transformation
+alias lowercase="awk '{print tolower(\$0)}'"
+alias uppercase="awk '{print toupper(\$0)}'"
+
+# Misc / Utils
+function start-bg { (nohup "$@" > /dev/null &) 2> /dev/null ;}
+function start-fg { "$@" && exit 2> /dev/null ;}
+function start-ntw { start-bg kitty "$@" ;}
+function files-here { start-bg dolphin --new-window . ;}
+alias battery-info='acpi -ba'
+function copyfile { cat "$@" | wl-copy ;}
+function copypath { pwd "$@" | wl-copy ;}
+alias history-l="history | less -n"
+
+# Overrides
+if [[ "${TERM}" == "xterm-kitty" ]]; then
+	alias clear="printf '\033[3J\033[H\033[2J'"
+	alias kitty-current-theme='cat ~/.config/kitty/kitty.conf | grep "# BEGIN_KITTY_THEME" -A 1 | tail -n1 | tail -c+3'
+	alias kitty-config-edit='edit ~/.config/kitty/kitty.conf'
+fi
+
+# Punishments
+function punish-sl {
+	sl
+
+	if [[ "$#" -eq 0 ]]; then
+		echo "💢 Whatever it was you just did, it was wrong!"
+	elif [[ "$#" -eq 1 ]]; then
+		echo "💢 Don't use '$1', it's incorrect!\n💢 Find the correct usage!"
+	elif [[ "$#" -ge 2 ]]; then
+		local params=""
+		if [[ "$#" -ge 3 ]]; then
+			params=" ${@:3}"
+		fi
+		echo -e "💢 Don't use '$1$params' ever again!\n💢 Use '$2$params' instead!"
+	fi
+
+	return 1
+}
+alias sl='punish-sl sl ls'
+alias chezmoid='punish-sl chezmoid chezmoi'
+alias cheetsheet='punish-sl cheetsheet cheatsheet'
+alias cheetshell='punish-sl cheetshell cheatshell'

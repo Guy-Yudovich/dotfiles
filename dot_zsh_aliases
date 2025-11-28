@@ -1,0 +1,39 @@
+#!/bin/zsh
+
+###################
+### ZSH ALIASES ###
+###################
+
+# Include bash aliases
+if [[ -f ~/.bash_aliases ]]; then
+	source ~/.bash_aliases
+	alias aliases-edit='edit ~/.bash_aliases && edit ~/.zsh_aliases && aliases-apply'
+else
+	alias aliases-edit='edit ~/.zsh_aliases && aliases-apply'
+fi
+alias aliases-apply='source ~/.zsh_aliases'
+
+# Aliases & Shortcuts & RC-files Management
+alias shrc-apply='start-fg zsh'
+# alias shrc-apply="omz reload"
+alias shrc-edit="edit ~/.zshrc && shrc-apply"
+
+# Plugin Based Aliases
+function aliases { als "$@" | less ;}
+
+# Overrides
+if [[ " ${plugins} " =~ " zoxide " ]]; then
+	function zo { (z "$@" && files-here ) ;}
+	alias j='z'
+	alias jo='zo'
+elif [[ " ${plugins} " =~ " autojump " ]]; then
+	function jo { (j "$@" && files-here ) ;}
+	function jco { (jc "$@" && files-here) ;}
+	alias z='j'
+	alias zo='jo'
+else
+	alias j='cd'
+	alias jo='cdo'
+	alias z='cd'
+	alias zo='cdo'
+fi

@@ -1,0 +1,52 @@
+#!/bin/bash
+# See https://vitormv.github.io/fzf-themes for interactive designer
+
+-m
+--layout reverse
+# --raw
+--style full
+--border="rounded"
+--padding="1,2"
+--margin="1,1"
+--height='~40%'
+--min-height='10+'
+--prompt="=>> "
+--marker="◆"
+--pointer="󰜴"
+# --separator="󱘹"
+
+--border-label=" fzf "
+--border-label-pos="0"
+--input-label=" Input "
+--header-label=" File Type "
+
+--preview-window="border-rounded"
+
+# --preview '
+# # echo "{}" | bat --style numbers,header-filename,header-filesize --color=always --tabs 2 --squeeze-blank --squeeze-limit 2 --line-range :200
+# # set | grep -i fzf | bat --style numbers,header-filename,header-filesize --color=always --tabs 2 --squeeze-blank --squeeze-limit 2 --line-range :200
+# bat --style numbers,header-filename,header-filesize --color=always --tabs 2 --squeeze-blank --squeeze-limit 2 --line-range :200 {}
+# '
+--bind 'result:transform-list-label:
+if [[ -z $FZF_QUERY ]]; then
+	echo " $FZF_MATCH_COUNT items "
+else
+	echo " $FZF_MATCH_COUNT matches for [$FZF_QUERY] "
+fi
+'
+--bind 'focus:transform-preview-label:
+[[ -n {} ]] && printf " Previewing [%s] " {}
+'
+# --bind 'focus:+transform-header:
+# file --brief {} || echo "No file selected"
+# '
+# --bind="ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files || exit 0)"
+--color="border:#aaaaaa,label:#cccccc"
+--color="preview-border:#9999cc,preview-label:#ccccff"
+--color="list-border:#669966,list-label:#99cc99"
+--color="input-border:#996666,input-label:#ffcccc"
+--color="header-border:#6699cc,header-label:#99ccff"
+--color="fg:-1,fg+:#d0d0d0,bg:-1,bg+:#262626"
+--color="hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#af5fff"
+--color="prompt:#23acdd,spinner:#af5fff,pointer:#87ff00,header:#87afaf"
+--color="border:#262626,label:#aeaeae,query:#d9d9d9"

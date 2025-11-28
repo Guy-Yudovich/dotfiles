@@ -1,0 +1,218 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# empty, directory, git branch, git status, language
+add_newline = true
+format = """
+$status$cmd_duration$fill
+[](fg:#a3aed2)[  $sudo  ](bg:#a3aed2)\
+[  $directory$package  ](fg:#a3aed2 bg:#769ff0)\
+[  $git_branch$git_status$git_commit$git_state  ](fg:#769ff0 bg:#394260)\
+
+
+[  ](fg:#394260 bg:#212736)\
+$c\
+$cpp\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$fortran\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+[  ](fg:#769ff0 bg:#212736)\
+
+
+[  ](fg:#212736 bg:#1d2230)\
+[    ](fg:#1d2230 bg:#1d2230)[](fg:#1d2230) \
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_metrics\
+$hg_branch\
+$hg_state\
+$pijul_channel\
+$docker_context\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$nats\
+$direnv\
+$env_var\
+$mise\
+$crystal
+$jobs\
+$battery\
+$time\
+$os\
+$container\
+$netns\
+$shell\
+$character
+"""
+
+[status]
+disabled = false
+format = "[󱘹󱘹󱘹󱘹](bold fg:#212736) [$symbol $common_meaning$signal_name$maybe_int]($style) "
+map_symbol = true
+failure_style = 'bold fg:196'
+# success_style = 'bold fg:046'
+# success_symbol = '󰄬'
+sigint_symbol = ''
+
+[cmd_duration]
+format = '[󱘹󱘹󱘹󱘹](bold fg:#212736) took [$duration]($style) '
+
+[fill]
+disabled = false
+style = "bold fg:#212736"
+symbol = '󱘹'
+
+[sudo]
+disabled = false
+style = 'bg:#a3aed2'
+format = '[$symbol]($style)'
+symbol = '🧙'
+
+[directory]
+style = 'bold fg:#eeeeee bg:#769ff0'
+format = '[$read_only]($read_only_style)[$path]($style) '
+read_only_style = 'bold fg:#eeeeee bg:#769ff0'
+read_only = ' '
+
+[package]
+style = 'bold fg:#FFCA28 bg:#769ff0'
+format = '[$symbol$version]($style) '
+
+[git_branch]
+style = 'bold fg:165 bg:#394260'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_status]
+style = 'fg:#769ff0 bg:#394260'
+format = '[\[ $all_status$ahead_behind\]]($style) '
+conflicted = '[!= ](bold fg:196 bg:#394260)'
+ahead = '[󰶼 ](bold fg:164 bg:#394260)'
+behind = '[󰶹 ](bold fg:164 bg:#394260)'
+diverged = '[󰶼󰶹 ](bold fg:164 bg:#394260)'
+up_to_date = '[󰄬 ](bold fg:046 bg:#394260)'
+untracked = '[ ](bold fg:250 bg:#394260)'
+modified = '[ ](bold fg:190 bg:#394260)'
+staged = '[󰐕 ](bold fg:082 bg:#394260)'
+renamed = '[󰄾 ](bold fg:220 bg:#394260)'
+deleted = '[󰆴 ](bold fg:160 bg:#394260)'
+
+[git_commit]
+style = 'bold fg:040 bg:#394260'
+format = '[\($hash$tag\)]($style) '
+
+[git_state]
+style = 'bold fg:178 bg:#394260'
+format = '[\($state( $progress_current/$progress_total)\)]($style) '
+
+[character]
+success_symbol = '[=>>](bold cyan)'
+error_symbol = '[=>>](bold red)'
+
+[c]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version(-$name) )]($style)'
+
+[cpp]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version(-$name) )]($style)'
+
+[cmake]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version )]($style)'
+
+[dotnet]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version )(🎯 $tfm )]($style)'
+
+[gradle]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version )]($style)'
+
+[java]
+style = 'fg:#769ff0 bg:#212736'
+format = '[${symbol}(${version} )]($style)'
+
+[kotlin]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version )]($style)'
+
+[lua]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version )]($style)'
+
+[nodejs]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version )]($style)'
+
+[python]
+style = 'fg:#769ff0 bg:#212736'
+symbol = '[󱔎](bold fg:yellow bg:#212736) '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[rust]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version )]($style)'
+
+[typst]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version )]($style)'
+
+[custom.whoami] # example custom module
+when = true
+command = "echo 'text'"

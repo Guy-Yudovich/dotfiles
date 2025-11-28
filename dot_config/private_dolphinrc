@@ -1,0 +1,25 @@
+[ContextMenu]
+ShowOpenTerminal=false
+
+[General]
+BrowseThroughArchives=true
+DoubleClickViewAction=show_terminal_panel
+FilterBar=true
+OpenExternallyCalledFolderInNewTab=true
+ShowFullPath=true
+ShowFullPathInTitlebar=true
+ShowToolTips=true
+SortingChoice=CaseInsensitiveSorting
+UseTabForSwitchingSplitView=true
+Version=202
+ViewPropsTimestamp=2025,11,9,23,9,41.03
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,glycin-heif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,glycin-image-rs,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,glycin-svg,svgthumbnail,textthumbnail

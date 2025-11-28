@@ -1,0 +1,16 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Guy Yudovich
+	email = guy.yudovich@gmail.com
+[core]
+	editor = micro
+[credential]
+	helper = cache
+[push]
+	default = simple
+[alias]
+	graph = log --graph --oneline --decorate
+	amend = commit --amend --no-edit
+[commit]
+	gpgsign = on

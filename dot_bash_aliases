@@ -38,6 +38,7 @@ alias fzfrc-edit='conf-edit ~/.fzfrc'
 alias starship-config='conf-edit ~/.config/starship.toml'
 alias chezmoi='chezmoi --interactive'
 alias chezmoish='start-ntw chezmoi cd'
+alias chezmoish-here='start-fg chezmoi cd'
 
 # Package Management
 alias reflector-sync='sudo reflector --protocol https --sort score --save /etc/pacman.d/mirrorlist && yay -Syy'

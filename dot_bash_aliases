@@ -48,6 +48,7 @@ function yay-search { yay -Ssl | fzf -q "$1" -m --preview 'yay -Si {1}' ;}
 function pkgs-yay { yay "$@" -< ~/.pkg_list ;}
 alias pkgs-install='pkgs-yay -S --needed'
 alias pkgs-edit='conf-edit ~/.pkg_list'
+function pkgs-add { for arg in "$@"; do echo "$arg" >> ~/.pkg_list; done ;}
 
 # Docs Navigation
 function help { lessify "$@" --help ;}

@@ -17,6 +17,7 @@ alias sl='sl -acdew8'
 # Editing
 export EDITOR='micro'
 alias edit="${EDITOR}"
+alias conf-edit='chezmoi edit --apply'
 
 # Pager
 export PAGER='less -I -K --use-color --wordwrap'
@@ -29,12 +30,12 @@ function lessify { "$@" | less ;}
 # Aliases & Shortcuts & RC-files Management
 function aliases { alias "$@" | less ;}
 function delalias { if alias "$1" > /dev/null 2>&1; then unalias "$1"; fi ;}
-alias aliases-apply='source ~/.bash_aliases'
-alias aliases-edit='edit ~/.bash_aliases && aliases-apply'
-alias shrc-apply='start-fg bash'
-alias shrc-edit='edit ~/.bashrc && shrc-apply'
-alias fzfrc-edit='edit ~/.fzfrc'
-alias starship-config='edit ~/.config/starship.toml'
+alias aliases-apply='echo "✅ applying aliases" && source ~/.bash_aliases'
+alias aliases-edit='conf-edit ~/.bash_aliases && aliases-apply'
+alias shrc-apply='echo "✅ applying shrc" && start-fg bash'
+alias shrc-edit='conf-edit ~/.bashrc && shrc-apply'
+alias fzfrc-edit='conf-edit ~/.fzfrc'
+alias starship-config='conf-edit ~/.config/starship.toml'
 alias chezmoi='chezmoi --interactive'
 alias chezmoish='start-ntw chezmoi cd'
 
@@ -105,7 +106,7 @@ alias history-l="history | less -n"
 if [[ "${TERM}" == "xterm-kitty" ]]; then
 	alias clear="printf '\033[3J\033[H\033[2J'"
 	alias kitty-current-theme='cat ~/.config/kitty/kitty.conf | grep "# BEGIN_KITTY_THEME" -A 1 | tail -n1 | tail -c+3'
-	alias kitty-config-edit='edit ~/.config/kitty/kitty.conf'
+	alias kitty-config-edit='conf-edit ~/.config/kitty/kitty.conf'
 fi
 
 # Punishments

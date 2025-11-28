@@ -7,16 +7,16 @@
 # Include bash aliases
 if [[ -f ~/.bash_aliases ]]; then
 	source ~/.bash_aliases
-	alias aliases-edit='edit ~/.bash_aliases && edit ~/.zsh_aliases && aliases-apply'
+	alias aliases-edit='conf-edit ~/.bash_aliases ~/.zsh_aliases && aliases-apply'
 else
-	alias aliases-edit='edit ~/.zsh_aliases && aliases-apply'
+	alias aliases-edit='conf-edit ~/.zsh_aliases && aliases-apply'
 fi
-alias aliases-apply='source ~/.zsh_aliases'
+alias aliases-apply='echo "✅ applying aliases" && source ~/.zsh_aliases'
 
 # Aliases & Shortcuts & RC-files Management
-alias shrc-apply='start-fg zsh'
+alias shrc-apply='echo "✅ applying shrc" && start-fg zsh'
 # alias shrc-apply="omz reload"
-alias shrc-edit="edit ~/.zshrc && shrc-apply"
+alias shrc-edit="conf-edit ~/.zshrc && shrc-apply"
 
 # Plugin Based Aliases
 function aliases { als "$@" | less ;}

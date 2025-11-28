@@ -21,7 +21,6 @@ plugins=(
 	"kitty"
 	"safe-paste"
 	"starship"
-	"sudo"
 	"urltools"
 	"zoxide"
 	"zsh-interactive-cd"

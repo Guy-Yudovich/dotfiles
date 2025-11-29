@@ -20,7 +20,7 @@ alias edit="${EDITOR}"
 alias conf-edit='chezmoi edit --apply'
 
 # Pager
-export PAGER='less -I -K --use-color --wordwrap'
+export PAGER='less -I -K --use-color --wordwrap --raw-control-chars'
 export MANPAGER="${PAGER}"
 alias pager="${PAGER}"
 function pagify { "$@" | pager ;}
@@ -58,7 +58,7 @@ function cheatsheet { cht.sh "$@" | less -n ;}
 function cheatshell { start-bg kitty cht.sh --shell "$1" ;}
 
 # Navigation
-alias eza='eza --color=always --classify=always --icons=automatic --header'
+alias eza='eza --color=always --classify=always --icons=always --header'
 function cdo { (cd "$@" && files-here ) ;}
 alias l='ls -l'
 alias la='ls -la'

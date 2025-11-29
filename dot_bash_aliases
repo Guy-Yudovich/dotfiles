@@ -106,12 +106,20 @@ alias battery-info='acpi -ba'
 function copyfile { cat "$@" | wl-copy ;}
 function copypath { pwd "$@" | wl-copy ;}
 alias history-l="history | less -n"
+function has-cli { if which "$1" > /dev/null 2>&1 && return 0 || return 1 ;}
 
-# Overrides
+# Kitty
 if [[ "${TERM}" == "xterm-kitty" ]]; then
 	alias clear="printf '\033[3J\033[H\033[2J'"
 	alias kitty-current-theme='cat ~/.config/kitty/kitty.conf | grep "# BEGIN_KITTY_THEME" -A 1 | tail -n1 | tail -c+3'
 	alias kitty-config='conf-edit ~/.config/kitty/kitty.conf'
+fi
+
+# Hyprland
+if has-cli hyprctl; then
+	alias waybar-kill='pkill waybar'
+	alias waybar-start='hyprctl dispatch exec waybar'
+	alias waybar-restart='waybar-kill && waybar-start'
 fi
 
 # Punishments

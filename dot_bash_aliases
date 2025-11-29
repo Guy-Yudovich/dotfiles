@@ -116,7 +116,7 @@ fi
 
 # Punishments
 function punish-sl {
-	sl
+	command sl
 
 	if [[ "$#" -eq 0 ]]; then
 		echo "💢 Whatever it was you just did, it was wrong!"

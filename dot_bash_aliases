@@ -116,7 +116,7 @@ fi
 
 # Punishments
 function punish-sl {
-	command sl
+	sl
 
 	if [[ "$#" -eq 0 ]]; then
 		echo "💢 Whatever it was you just did, it was wrong!"
@@ -132,7 +132,6 @@ function punish-sl {
 
 	return 1
 }
-function sl { punish-sl "$0" ls ;}
 function chezmoid { punish-sl "$0" chezmoi ;}
 function cheetsheet { punish-sl "$0" cheatsheet ;}
 function cheetshell { punish-sl "$0" cheatshell ;}

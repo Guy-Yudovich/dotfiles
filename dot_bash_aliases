@@ -117,9 +117,13 @@ fi
 
 # Hyprland
 if has-cli hyprctl; then
-	alias waybar-kill='pkill waybar'
-	alias waybar-start='hyprctl dispatch exec waybar'
-	alias waybar-restart='waybar-kill && waybar-start'
+	alias hyprctl-run='hyprctl dispatch exec'
+	
+	if has-cli waybar; then
+		alias waybar-kill='pkill waybar'
+		alias waybar-start='hyprctl-run waybar'
+		alias waybar-restart='waybar-kill && waybar-start'
+	fi
 fi
 
 # Punishments

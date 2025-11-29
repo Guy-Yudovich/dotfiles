@@ -20,7 +20,7 @@ alias edit="${EDITOR}"
 alias conf-edit='chezmoi edit --apply'
 
 # Pager
-export PAGER='less -I -K --use-color --wordwrap --raw-control-chars'
+export PAGER='less --ignore-case --quit-on-intr --use-color --wordwrap --raw-control-chars'
 export MANPAGER="${PAGER}"
 alias pager="${PAGER}"
 function pagify { "$@" | pager ;}

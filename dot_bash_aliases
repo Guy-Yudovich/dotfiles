@@ -52,7 +52,7 @@ alias pkgs-edit='conf-edit ~/.pkg_list'
 function pkgs-add { for arg in "$@"; do echo "$arg" >> ~/.pkg_list; done; chezmoi add ~/.pkg_list ;}
 
 # Docs Navigation
-function help { lessify "$@" --help ;}
+function help { lessify "$@" --help 2>&1 ;}
 function tldr { command tldr -m "$@" | bat-plain --language=markdown | less ;}
 function cheatsheet { cht.sh "$@" | less -n ;}
 function cheatshell { start-bg kitty cht.sh --shell "$1" ;}

@@ -13,6 +13,7 @@ alias bat='bat --color=always --paging=always --decorations=always'
 alias bat-plain='bat --plain --no-paging'
 alias code='code -n'
 alias sl='sl -acdew8'
+alias ip='ip -c a'
 
 # Editing
 export EDITOR='micro'
@@ -119,13 +120,15 @@ fi
 if has-cli hyprctl; then
 	alias hyprctl-run='hyprctl dispatch exec'
 fi
+
 # Waybar	
 if has-cli waybar; then
 	alias waybar-toggle='pkill --signal SIGUSR1 waybar'
 	alias waybar-reload='pkill --signal SIGUSR2 waybar'
 	alias waybar-kill='pkill waybar'
 	alias waybar-restart='waybar-kill; waybar-start'
-	
+
+	# Hyprland
 	if has-cli hyprctl; then
 		alias waybar-start='hyprctl-run waybar'
 	else

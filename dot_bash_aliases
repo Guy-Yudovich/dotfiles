@@ -129,7 +129,7 @@ if has-cli waybar; then
 	if has-cli hyprctl; then
 		alias waybar-start='hyprctl-run waybar'
 	else
-		alias waybar-start='start-bg-waybar'
+		alias waybar-start='start-bg waybar'
 	fi
 fi
 

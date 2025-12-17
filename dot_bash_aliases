@@ -158,3 +158,9 @@ function chezmoid { punish-sl "$0" chezmoi ;}
 function cheetsheet { punish-sl "$0" cheatsheet ;}
 function cheetshell { punish-sl "$0" cheatshell ;}
 function startship-config { punish-sl "$0" starship-config ;}
+
+# Python
+alias pyvenv='source ./.venv/bin/activate && uv sync && uv pip install --editable .'
+alias pyvenv312='python3.12 -m venv .venv && pyvenv`'
+alias pyvenv313='python3.13 -m venv .venv && pyvenv`'
+alias pyvenv314='python3.14 -m venv .venv && pyvenv`'

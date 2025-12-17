@@ -4,7 +4,7 @@ def ___is_importable(name: str) -> bool:
 
 from typing import *
 from typing_extensions import *
-from enum import Enum, Flag
+from enum import Enum, Flag, StrEnum
 import os, sys, json, re, enum, functools, itertools, inspect, subprocess
 
 if ___is_importable("pydantic"):

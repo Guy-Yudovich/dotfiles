@@ -160,12 +160,9 @@ function cheetshell { punish-sl "$0" cheatshell ;}
 function startship-config { punish-sl "$0" starship-config ;}
 
 # Python
-alias pyvenv='source ./.venv/bin/activate && uv pip install --editable .'
+alias pyvenv='source ./.venv/bin/activate && export PATH="$PATH:.venv/bin" && uv pip install --editable .'
 alias pyvenv312='python3.12 -m venv .venv && pyvenv'
 alias pyvenv313='python3.13 -m venv .venv && pyvenv'
 alias pyvenv314='python3.14 -m venv .venv && pyvenv'
 alias rm-pycache='rm -rf ./**/.cache/uv; rm -rf ./**/.cache/ruff; rm -rf ./**/.cache/mypy; rm -rf ./**/.cache/pytest; rm -rf ./**/.uv_cache; rm -rf ./**/.ruff_cache; rm -rf ./**/.mypy_cache; rm -rf ./**/.pytest_cache'
 alias rm-pyvenv='rm -rf ./**/.venv; rm-pycache'
-alias pip3.12='python3.12 -m pip'
-alias pip3.13='python3.13 -m pip'
-alias pip3.14='python3.14 -m pip'

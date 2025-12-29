@@ -100,7 +100,7 @@ alias uppercase="awk '{print toupper(\$0)}'"
 
 # Misc / Utils
 function start-bg { (nohup "$@" > /dev/null &) 2> /dev/null ;}
-function start-fg { "$@" && exit 2> /dev/null ;}
+function start-fg { "$@"; exit 2> /dev/null ;}
 function start-ntw { start-bg kitty "$@" ;}
 function files-here { start-bg dolphin --new-window . ;}
 alias battery-info='acpi -ba'

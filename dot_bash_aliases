@@ -164,5 +164,6 @@ alias pyvenv='source ./.venv/bin/activate && export PATH="$PATH:.venv/bin" && (u
 alias pyvenv312='python3.12 -m venv .venv && pyvenv'
 alias pyvenv313='python3.13 -m venv .venv && pyvenv'
 alias pyvenv314='python3.14 -m venv .venv && pyvenv'
+alias pyvenvc='pyvenv && clear'
 alias rm-pycache='rm -rf ./**/.cache/uv; rm -rf ./**/.cache/ruff; rm -rf ./**/.cache/mypy; rm -rf ./**/.cache/pytest; rm -rf ./**/.uv_cache; rm -rf ./**/.ruff_cache; rm -rf ./**/.mypy_cache; rm -rf ./**/.pytest_cache'
 alias rm-pyvenv='rm -rf ./**/.venv; rm-pycache'

@@ -54,7 +54,7 @@ function pkgs-add { for arg in "$@"; do echo "$arg" >> ~/.pkg_list; done; chezmo
 
 # Docs Navigation
 function help { "$@" --help 2>&1 | less ;}
-function tldr { command tldr -m "$@" | bat-plain --language=markdown | less ;}
+function tldr { local target="${@:-tldr}"; command tldr -m "${target}" | bat-plain --language=markdown | less ;}
 function cheatsheet { cht.sh "$@" | less -n ;}
 function cheatshell { start-bg kitty cht.sh --shell "$1" ;}
 
@@ -164,6 +164,6 @@ alias pyvenv='source ./.venv/bin/activate && export PATH="$PATH:.venv/bin" && (u
 alias pyvenv312='python3.12 -m venv .venv && pyvenv'
 alias pyvenv313='python3.13 -m venv .venv && pyvenv'
 alias pyvenv314='python3.14 -m venv .venv && pyvenv'
-alias pyvenvc='pyvenv | less && clear'
+alias pyvenvc='pyvenv && sleep 5 && clear'
 alias rm-pycache='rm -rf ./**/.cache/uv; rm -rf ./**/.cache/ruff; rm -rf ./**/.cache/mypy; rm -rf ./**/.cache/pytest; rm -rf ./**/.uv_cache; rm -rf ./**/.ruff_cache; rm -rf ./**/.mypy_cache; rm -rf ./**/.pytest_cache'
 alias rm-pyvenv='rm -rf ./**/.venv; rm-pycache'

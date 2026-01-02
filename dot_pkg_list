@@ -1,7 +1,7 @@
 7zip
 alacritty
 bat
-blueberry-wayland
+overskride-bin
 bluetui
 brightnessctl
 btop
@@ -90,4 +90,3 @@ hyprls-git
 hyprfreeze
 python312
 python314
-overskride-bin

@@ -14,3 +14,5 @@
 	amend = commit --amend --no-edit
 [commit]
 	gpgsign = on
+[pull]
+	rebase = true

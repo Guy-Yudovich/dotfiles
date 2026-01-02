@@ -6,7 +6,10 @@ from typing import *
 from typing_extensions import *
 from enum import Enum, Flag, StrEnum
 from pathlib import Path
-import os, sys, json, re, enum, functools, itertools, inspect, subprocess, pathlib, tomli
+import os, sys, json, re, enum, functools, itertools, inspect, subprocess, pathlib
+
+if ___is_importable("tomli"):
+    import tomli
 
 if ___is_importable("pydantic"):
     import pydantic

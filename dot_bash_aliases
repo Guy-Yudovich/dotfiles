@@ -54,6 +54,13 @@ alias pkgs-install='pkgs-yay -S --needed'
 alias pkgs-edit='conf-edit ~/.pkg_list'
 function pkgs-add { for arg in "$@"; do echo "$arg" >> ~/.pkg_list; done; chezmoi add ~/.pkg_list ;}
 
+# Power Management
+alias sys-sleep='systemctl sleep'
+alias sys-suspend='systemctl suspend'
+alias sys-hibernate='systemctl hibernate'
+alias sys-poweroff='systemctl poweroff'
+alias sys-reboot='systemctl reboot'
+
 # Docs Navigation
 function help { "$@" --help 2>&1 | less ;}
 function tldr { local target="${@:-tldr}"; command tldr -m "${target}" | bat-plain --language=markdown | less ;}

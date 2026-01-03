@@ -1,10 +1,16 @@
+MenuBar=Disabled
+
 [ContextMenu]
 ShowOpenTerminal=false
 
+[DetailsMode]
+ViewFont=Noto Sans,10,-1,0,400,0,0,0,0,0,0,0,0,0,0,1
+
 [General]
 BrowseThroughArchives=true
-DoubleClickViewAction=show_terminal_panel
+DoubleClickViewAction=none
 FilterBar=true
+ModifiedStartupSettings=false
 OpenExternallyCalledFolderInNewTab=true
 ShowFullPath=true
 ShowFullPathInTitlebar=true

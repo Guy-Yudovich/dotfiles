@@ -111,6 +111,7 @@ alias uppercase="awk '{print toupper(\$0)}'"
 function start-bg { (nohup "$@" > /dev/null &) 2> /dev/null ;}
 function start-fg { "$@"; exit 2> /dev/null ;}
 function start-ntw { start-bg kitty "$@" ;}
+alias wait-for-continue="bash -c 'read -p \"Press Enter to continue...\"'"
 function files-here { start-bg dolphin --new-window . ;}
 alias battery-info='acpi -ba'
 function copyfile { cat "$@" | wl-copy ;}
@@ -139,9 +140,22 @@ if has-cli waybar; then
 
 	# Hyprland
 	if has-cli hyprctl; then
-		alias waybar-start='hyprctl-run waybar > /dev/null'
+		alias waybar-start='hyprctl-run waybar > /dev/null 2>&1'
 	else
 		alias waybar-start='start-bg waybar'
+	fi
+fi
+
+# QuickShell
+if has-cli quickshell; then
+	alias qs-kill='pkill quickshell'
+	alias qs-restart='quickshell-kill; quickshell-start'
+	
+	# Hyprland
+	if has-cli hyprctl; then
+		alias qs-start='hyprctl-run quickshell > /dev/null 2>&1'
+	else
+		alias qs-start='start-bg quickshell'
 	fi
 fi
 
@@ -173,7 +187,7 @@ alias pyvenv='source ./.venv/bin/activate && export PATH="$PATH:.venv/bin" && (u
 alias pyvenv312='python3.12 -m venv .venv && pyvenv'
 alias pyvenv313='python3.13 -m venv .venv && pyvenv'
 alias pyvenv314='python3.14 -m venv .venv && pyvenv'
-alias ___pyvenvc="pyvenv && echo && bash -c 'read -p \"Press Enter to continue...\"' && clear"
+alias ___pyvenvc="pyvenv && echo && wait-for-continue && clear"
 alias pyvenvc='clear && ___pyvenvc'
 alias pyvenvc312='clear && python3.12 -m venv .venv && ___pyvenvc'
 alias pyvenvc313='clear && python3.13 -m venv .venv && ___pyvenvc'

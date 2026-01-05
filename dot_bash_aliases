@@ -149,7 +149,7 @@ fi
 # QuickShell
 if has-cli quickshell; then
 	alias qs-kill='pkill quickshell'
-	alias qs-restart='quickshell-kill; quickshell-start'
+	alias qs-restart='qs-kill; qs-start'
 	
 	# Hyprland
 	if has-cli hyprctl; then

@@ -1,2 +1,7 @@
 import Quickshell
-import QtQuick
+
+import "Widgets"
+
+Scope {
+    Bar {}
+}

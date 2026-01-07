@@ -11,25 +11,4 @@ Singleton { id: root
     SystemClock { id: clock
         precision: SystemClock.Second
     }
-
-    // Timer {
-    //     interval: 1000
-    //     running: true
-    //     repeat: true
-
-    //     onTriggered: {
-    //         date_proc.running = true
-    //     }
-    // }
-
-    // Process { id: date_proc
-    //     command: ["date"]
-    //     running: true
-
-    //     stdout: StdioCollector {
-    //         onStreamFinished: {
-    //             root.time = this.text
-    //         }
-    //     }
-    // }
 }

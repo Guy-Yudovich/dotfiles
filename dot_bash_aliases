@@ -61,6 +61,10 @@ alias sys-hibernate='systemctl hibernate'
 alias sys-poweroff='systemctl poweroff'
 alias sys-reboot='systemctl reboot'
 
+# System maintenance
+alias battery-info='acpi -ba'
+alias storage-info='(echo "[ >=> >=> { DUST } <=< <=< ]\n" && sudo dust -C -d 1 / && echo "\n[ >=> >=> { DUF } <=< <=< ]\n" && duf)'
+
 # Docs Navigation
 function help { "$@" --help 2>&1 | less ;}
 function tldr { local target="${@:-tldr}"; command tldr -m "${target}" | bat-plain --language=markdown | less ;}
@@ -113,7 +117,6 @@ function start-fg { "$@"; exit 2> /dev/null ;}
 function start-ntw { start-bg kitty "$@" ;}
 alias wait-for-continue="bash -c 'read -p \"Press Enter to continue...\"'"
 function files-here { start-bg dolphin --new-window . ;}
-alias battery-info='acpi -ba'
 function copyfile { cat "$@" | wl-copy ;}
 function copypath { pwd "$@" | wl-copy ;}
 alias history-l="history | less -n"

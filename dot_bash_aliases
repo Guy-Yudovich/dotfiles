@@ -115,6 +115,7 @@ alias uppercase="awk '{print toupper(\$0)}'"
 function start-bg { (nohup "$@" > /dev/null &) 2> /dev/null ;}
 function start-fg { "$@"; exit 2> /dev/null ;}
 function start-ntw { start-bg kitty "$@" ;}
+alias terminal-here { start-ntw && exit ;}
 alias wait-for-continue="bash -c 'read -p \"Press Enter to continue...\"'"
 function files-here { start-bg dolphin --new-window . ;}
 function copyfile { cat "$@" | wl-copy ;}

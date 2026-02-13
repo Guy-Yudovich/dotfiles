@@ -87,6 +87,8 @@ zsh-syntax-highlighting
 zshdb
 hyprls-git
 hyprfreeze
+python38
+python39
 python312
-python314
+python
 quickshell

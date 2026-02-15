@@ -82,7 +82,7 @@ function sysupgrade {
 	bash -c 'read -p "Press Enter to start upgrade for firmware... (ctrl+d to skip)"' \
 		|| (echo "\nSkipping" && exit 1) \
 		&& echo "-- Upgrading firmware..." \
-		&& fwupdmgr update
+		&& start-ntw --hold fwupdmgr update
 
 	echo "\n"
 
@@ -90,14 +90,14 @@ function sysupgrade {
 		|| (echo "\nSkipping" && exit 1) \
 		&& echo "-- Upgrading yay packages..." \
 		&& reflector-sync \
-		&& yay -Syu
+		&& start-ntw --hold yay -Syyu
 
 	echo "\n"
 	
 	bash -c 'read -p "Press Enter to start upgrade for flatpak packages... (ctrl+d to skip)"' \
 		|| (echo "\nSkipping" && exit 1) \
 		&& echo "-- Upgrading flatpak packages..." \
-		&& flatpak update
+		&& start-ntw --hold flatpak update
 
 	echo "\n"
 	

@@ -13,6 +13,9 @@
 	graph = log --graph --oneline --decorate
 	amend = commit --amend --no-edit
 [commit]
-	gpgsign = on
+	gpgsign = true
 [pull]
 	rebase = true
+[advice]
+	statusHints = true
+	skippedCherryPicks = true

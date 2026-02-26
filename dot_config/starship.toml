@@ -176,6 +176,10 @@ format = '[$symbol($version(-$name) )]($style)'
 style = 'fg:#769ff0 bg:#212736'
 format = '[$symbol($version )]($style)'
 
+[dart]
+style = 'fg:#769ff0 bg:#212736'
+format = '[$symbol($version )]($style)'
+
 [dotnet]
 style = 'fg:#769ff0 bg:#212736'
 format = '[$symbol($version )(🎯 $tfm )]($style)'

@@ -129,10 +129,10 @@ alias lr='l -RT'
 alias lar='la -RT'
 alias lsr='ls -RT'
 alias lsar='lsa -RT'
-alias lDr='lDr -RT'
-alias lDar='lDar -RT'
-alias lFr='lFr -RT'
-alias lFar='lFar -RT'
+alias lDr='lD -RT'
+alias lDar='lDa -RT'
+alias lFr='lF -RT'
+alias lFar='lFa -RT'
 delalias lDD # using 'lDa' alias instead
 delalias lS # unused
 delalias lT # unused

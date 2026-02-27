@@ -40,6 +40,7 @@ alias starship-config='conf-edit ~/.config/starship.toml'
 alias chezmoi='chezmoi --interactive'
 alias chezmoish='start-ntw chezmoi cd'
 alias chezmoish-here='start-fg chezmoi cd'
+function run-source-rm { local temp_file="$(mktemp -u)"; $@ > temp_file && source temp_file; rm -f temp_file ;}
 
 # Package Management
 alias reflector-sync='sudo reflector --protocol https --sort score --save /etc/pacman.d/mirrorlist'

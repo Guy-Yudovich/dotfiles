@@ -14,9 +14,8 @@ fi
 alias aliases-apply='echo "✅ applying aliases" && source ~/.zsh_aliases'
 
 # Aliases & Shortcuts & RC-files Management
-alias shrc-apply='echo "✅ applying shrc" && start-fg zsh'
-# alias shrc-apply="omz reload"
-alias shrc-edit="conf-edit ~/.zshrc && shrc-apply"
+alias shrc-apply='echo "✅ applying shrc" && omz reload'
+alias shrc-edit='conf-edit ~/.zshrc && shrc-apply'
 
 # Plugin Based Aliases
 function aliases { als "$@" | less ;}

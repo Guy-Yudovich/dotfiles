@@ -8,6 +8,12 @@ from enum import Enum, Flag, StrEnum
 from pathlib import Path
 import os, sys, json, re, enum, functools, itertools, inspect, subprocess, pathlib
 
+if ___is_importable("httpx"):
+    import httpx
+
+if ___is_importable("requests"):
+    import requests
+
 if ___is_importable("tomli"):
     import tomli
 

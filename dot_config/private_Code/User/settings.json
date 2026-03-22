@@ -108,6 +108,7 @@
     "chat.useAgentSkills": true,
     "python.analysis.diagnosticMode": "workspace",
     "python.defaultInterpreterPath": "/bin/python",
+    "dart.flutterSdkPath": "/home/guy/.flutter/flutter",
     "markdown-preview-enhanced.previewTheme": "github-dark.css",
     "chat.viewSessions.orientation": "stacked",
     "workbench.editorAssociations": {

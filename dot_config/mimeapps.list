@@ -1,0 +1,147 @@
+[Default Applications]
+
+# ──────────────────────────────────────────────
+# Web (Firefox)
+# ──────────────────────────────────────────────
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/ftp=firefox.desktop
+text/html=firefox.desktop
+application/xhtml+xml=firefox.desktop
+
+# ──────────────────────────────────────────────
+# Email → Gmail in Firefox
+# ──────────────────────────────────────────────
+x-scheme-handler/mailto=firefox.desktop
+
+# ──────────────────────────────────────────────
+# File Manager (Dolphin)
+# ──────────────────────────────────────────────
+inode/directory=org.kde.dolphin.desktop
+inode/mount-point=org.kde.dolphin.desktop
+
+# ──────────────────────────────────────────────
+# Plain Text (Micro)
+# ──────────────────────────────────────────────
+text/plain=micro.desktop
+
+# ──────────────────────────────────────────────
+# Markdown (Obsidian)
+# ──────────────────────────────────────────────
+text/markdown=obsidian.desktop
+text/x-markdown=obsidian.desktop
+
+# ──────────────────────────────────────────────
+# Office Documents (OnlyOffice)
+# ──────────────────────────────────────────────
+application/msword=onlyoffice-desktopeditors.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice-desktopeditors.desktop
+application/vnd.ms-excel=onlyoffice-desktopeditors.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors.desktop
+application/vnd.ms-powerpoint=onlyoffice-desktopeditors.desktop
+application/vnd.openxmlformats-officedocument.presentationml.presentation=onlyoffice-desktopeditors.desktop
+application/vnd.oasis.opendocument.text=onlyoffice-desktopeditors.desktop
+application/vnd.oasis.opendocument.spreadsheet=onlyoffice-desktopeditors.desktop
+application/vnd.oasis.opendocument.presentation=onlyoffice-desktopeditors.desktop
+application/vnd.oasis.opendocument.graphics=onlyoffice-desktopeditors.desktop
+application/rtf=onlyoffice-desktopeditors.desktop
+text/rtf=onlyoffice-desktopeditors.desktop
+
+# ──────────────────────────────────────────────
+# Rust (RustRover)
+# ──────────────────────────────────────────────
+text/x-rust=jetbrains-rustrover.desktop
+
+# ──────────────────────────────────────────────
+# Python (PyCharm)
+# ──────────────────────────────────────────────
+text/x-python=jetbrains-pycharm.desktop
+
+# ──────────────────────────────────────────────
+# C# (Rider)
+# ──────────────────────────────────────────────
+text/x-csharp=jetbrains-rider.desktop
+
+# ──────────────────────────────────────────────
+# Everything Else (VSCode)
+# ──────────────────────────────────────────────
+text/x-csrc=code.desktop
+text/x-chdr=code.desktop
+text/x-c++src=code.desktop
+text/x-c++hdr=code.desktop
+text/x-java=code.desktop
+text/x-kotlin=code.desktop
+text/javascript=code.desktop
+text/x-typescript=code.desktop
+application/javascript=code.desktop
+application/typescript=code.desktop
+text/x-go=code.desktop
+text/x-lua=code.desktop
+text/x-ruby=code.desktop
+text/x-php=code.desktop
+text/x-shellscript=code.desktop
+text/x-sh=code.desktop
+text/x-zsh=code.desktop
+text/x-fish=code.desktop
+text/x-sql=code.desktop
+text/css=code.desktop
+text/x-scss=code.desktop
+text/x-less=code.desktop
+text/x-cmake=code.desktop
+text/x-makefile=code.desktop
+application/json=code.desktop
+text/x-yaml=code.desktop
+application/x-yaml=code.desktop
+text/xml=code.desktop
+application/xml=code.desktop
+application/toml=code.desktop
+application/x-toml=code.desktop
+text/x-ini=code.desktop
+text/x-nfo=code.desktop
+text/x-log=code.desktop
+text/x-patch=code.desktop
+text/x-diff=code.desktop
+application/x-desktop=code.desktop
+
+
+[Added Associations]
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/ftp=firefox.desktop
+text/html=firefox.desktop
+application/xhtml+xml=firefox.desktop
+x-scheme-handler/mailto=firefox.desktop
+inode/directory=org.kde.dolphin.desktop
+text/plain=micro.desktop
+text/markdown=obsidian.desktop
+text/x-markdown=obsidian.desktop
+application/msword=onlyoffice-desktopeditors.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice-desktopeditors.desktop
+application/vnd.ms-excel=onlyoffice-desktopeditors.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors.desktop
+application/vnd.ms-powerpoint=onlyoffice-desktopeditors.desktop
+application/vnd.openxmlformats-officedocument.presentationml.presentation=onlyoffice-desktopeditors.desktop
+application/vnd.oasis.opendocument.text=onlyoffice-desktopeditors.desktop
+application/vnd.oasis.opendocument.spreadsheet=onlyoffice-desktopeditors.desktop
+application/vnd.oasis.opendocument.presentation=onlyoffice-desktopeditors.desktop
+application/rtf=onlyoffice-desktopeditors.desktop
+text/x-rust=jetbrains-rustrover.desktop
+text/x-python=jetbrains-pycharm.desktop
+text/x-csharp=jetbrains-rider.desktop
+text/x-csrc=code.desktop
+text/x-chdr=code.desktop
+text/x-c++src=code.desktop
+text/x-c++hdr=code.desktop
+text/x-java=code.desktop
+text/javascript=code.desktop
+text/x-typescript=code.desktop
+application/javascript=code.desktop
+text/x-go=code.desktop
+text/x-lua=code.desktop
+text/x-shellscript=code.desktop
+text/css=code.desktop
+text/x-yaml=code.desktop
+application/json=code.desktop
+text/xml=code.desktop
+application/xml=code.desktop
+application/toml=code.desktop

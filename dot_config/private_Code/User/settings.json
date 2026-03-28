@@ -85,7 +85,6 @@
     "terminal.integrated.shellIntegration.history": 1000,
     "terminal.integrated.suggest.insertTrailingSpace": true,
     "claudeCode.enableNewConversationShortcut": false,
-    "claudeCode.preferredLocation": "sidebar",
     "claudeCode.useCtrlEnterToSend": true,
     "chat.editor.wordWrap": "on",
     "chat.edits2.enabled": true,
@@ -117,4 +116,7 @@
         "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui": "default",
         "*.qrc": "qt-core.qrcEditor"
     },
+    "rust-analyzer.restartServerOnConfigChange": true,
+    "rust-analyzer.completion.fullFunctionSignatures.enable": true,
+    "claudeCode.preferredLocation": "sidebar",
 }

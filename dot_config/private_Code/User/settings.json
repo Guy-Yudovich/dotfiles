@@ -119,4 +119,15 @@
     "rust-analyzer.restartServerOnConfigChange": true,
     "rust-analyzer.completion.fullFunctionSignatures.enable": true,
     "claudeCode.preferredLocation": "sidebar",
+    "git.allowForcePush": true,
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "git.branchProtection": [
+        "master",
+        "main"
+    ],
+    "git.enableCommitSigning": true,
+    "git.enableSmartCommit": true,
+    "git.mergeEditor": true,
+    "git.showPushSuccessNotification": true,
+    "git.timeline.showUncommitted": true,
 }

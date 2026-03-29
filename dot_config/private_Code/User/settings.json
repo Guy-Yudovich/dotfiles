@@ -14,7 +14,6 @@
     "sonarlint.automaticAnalysis": true,
     "todo-tree.filtering.includeHiddenFiles": true,
     "path-intellisense.showHiddenFiles": true,
-    "explorer.fileNesting.enabled": true,
     "editor.wordWrap": "bounded",
     "files.exclude": {
         "**/.git": false
@@ -130,4 +129,10 @@
     "git.mergeEditor": true,
     "git.showPushSuccessNotification": true,
     "git.timeline.showUncommitted": true,
+    "telemetry.telemetryLevel": "off",
+    "explorer.fileNesting.enabled": true,
+    "explorer.sortOrder": "type",
+    "window.restoreWindows": "none",
+    "workbench.preferredDarkColorTheme": "One Dark Pro Mix",
+    "editor.formatOnPaste": true,
 }

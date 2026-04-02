@@ -32,8 +32,9 @@ installed_plugins_dir="/usr/share/zsh/plugins/"
 plugins_to_init=(
 )
 plugins_to_source=(
-	"${installed_plugins_dir}zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 	"${installed_plugins_dir}fzf-tab-git/fzf-tab.plugin.zsh"
+	"${installed_plugins_dir}zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+	"${installed_plugins_dir}zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 )
 
 export ZSH="$HOME/.oh-my-zsh"

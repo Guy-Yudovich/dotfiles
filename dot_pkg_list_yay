@@ -84,6 +84,7 @@ zoxide
 zsh
 zsh-lovers
 zsh-syntax-highlighting
+zsh-autosuggestions
 zshdb
 hyprls-git
 hyprfreeze
@@ -93,3 +94,5 @@ python312
 python
 quickshell
 pyenv
+steam
+lutris

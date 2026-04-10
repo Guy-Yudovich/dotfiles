@@ -62,44 +62,44 @@ $zig\
 
 [  ](fg:#212736 bg:#1d2230)\
 [    ](fg:#1d2230 bg:#1d2230)[](fg:#1d2230) \
-$username\
-$hostname\
-$localip\
-$shlvl\
-$singularity\
-$kubernetes\
-$vcsh\
-$fossil_branch\
-$fossil_metrics\
-$git_metrics\
-$hg_branch\
-$hg_state\
-$pijul_channel\
-$docker_context\
-$buf\
-$nix_shell\
-$conda\
-$meson\
-$spack\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$azure\
-$nats\
-$direnv\
-$env_var\
-$mise\
-$crystal
-$jobs\
-$battery\
-$time\
-$os\
-$container\
-$netns\
-$shell\
-$character
+\n$character
 """
+# $username\
+# $hostname\
+# $localip\
+# $shlvl\
+# $singularity\
+# $kubernetes\
+# $vcsh\
+# $fossil_branch\
+# $fossil_metrics\
+# $git_metrics\
+# $hg_branch\
+# $hg_state\
+# $pijul_channel\
+# $docker_context\
+# $buf\
+# $nix_shell\
+# $conda\
+# $meson\
+# $spack\
+# $memory_usage\
+# $aws\
+# $gcloud\
+# $openstack\
+# $azure\
+# $nats\
+# $direnv\
+# $env_var\
+# $mise\
+# $crystal
+# $jobs\
+# $battery\
+# $time\
+# $os\
+# $container\
+# $netns\
+# $shell\
 
 [status]
 disabled = false

@@ -5,6 +5,7 @@
 	email = guy.yudovich@gmail.com
 [core]
 	editor = kitty --class "terminal-popup-tui--git-editor" micro
+	pager = less
 [credential]
 	helper = cache
 [push]

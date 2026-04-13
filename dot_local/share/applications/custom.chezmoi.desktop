@@ -1,0 +1,13 @@
+[Desktop Entry]
+
+Name=Chezmoi
+GenericName=Dotfiles Manager
+Comment=Manage your dotfiles across multiple machines
+
+Type=Application
+Categories=System;Utility;ConsoleOnly;FileTools;
+Keywords=system;dotfile;config;
+
+Exec=--class="terminal-popup-tui--chezmoi" chezmoi cd
+StartupNotify=false
+Terminal=true

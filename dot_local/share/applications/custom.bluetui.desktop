@@ -1,0 +1,13 @@
+[Desktop Entry]
+
+Name=Bluetui
+GenericName=Bluetooth Manager
+Comment=TUI for managing bluetooth devices
+
+Type=Application
+Categories=System;Utility;ConsoleOnly;
+Keywords=system;bluetooth;blue;device;
+
+Exec=--class="terminal-popup-tui--bluetui" bluetui
+StartupNotify=false
+Terminal=true

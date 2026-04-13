@@ -4,7 +4,7 @@
 	name = Guy Yudovich
 	email = guy.yudovich@gmail.com
 [core]
-	editor = kitty --class "kitty-git-editor" micro
+	editor = kitty --class "terminal-popup-tui--git-editor" micro
 [credential]
 	helper = cache
 [push]

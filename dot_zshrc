@@ -29,9 +29,9 @@ plugins=(
 )
 
 installed_plugins_dir="/usr/share/zsh/plugins/"
-plugins_to_init=(
+plugins_to_init=( # plugins to initialize using `eval "$(${plugin} init zsh)"`
 )
-plugins_to_source=(
+plugins_to_source=( # plugins to source using `source "${plugin}"`
 	"${installed_plugins_dir}fzf-tab-git/fzf-tab.plugin.zsh"
 	"${installed_plugins_dir}zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 	"${installed_plugins_dir}zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"

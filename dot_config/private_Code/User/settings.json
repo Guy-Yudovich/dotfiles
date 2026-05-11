@@ -135,4 +135,5 @@
     "window.restoreWindows": "none",
     "workbench.preferredDarkColorTheme": "One Dark Pro Mix",
     "editor.formatOnPaste": true,
+    "vsicons.dontShowNewVersionMessage": true,
 }

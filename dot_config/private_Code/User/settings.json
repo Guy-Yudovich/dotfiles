@@ -35,6 +35,7 @@
         "endoflife",
         "envman",
         "fsutils",
+        "GLFW",
         "inodes",
         "loguru",
         "mypy",
@@ -136,4 +137,6 @@
     "workbench.preferredDarkColorTheme": "One Dark Pro Mix",
     "editor.formatOnPaste": true,
     "vsicons.dontShowNewVersionMessage": true,
+    "resharper.dataSharing.allowDataSharing": false,
+    "github.copilot.nextEditSuggestions.eagerness": "auto",
 }

@@ -147,9 +147,9 @@ alias lzgit='lazygit'
 alias gdh='git diff HEAD'
 
 # Periodic Execution
-alias watch='watch -n 1'
-alias watch-f='watch -n 0.1'
-alias watch-s='watch -n 10'
+alias watch='watch -n 1 ' # The space at the end enables using aliases
+alias watch-f='watch -n 0.1 ' # The space at the end enables using aliases
+alias watch-s='watch -n 10 ' # The space at the end enables using aliases
 
 # Text Transformation
 alias lowercase="awk '{print tolower(\$0)}'"

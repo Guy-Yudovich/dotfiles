@@ -10,6 +10,7 @@
 	helper = cache
 [push]
 	default = simple
+	autoSetupRemote = true
 [alias]
 	graph = log --graph --oneline --decorate
 	amend = commit --amend --no-edit
@@ -20,3 +21,4 @@
 [advice]
 	statusHints = true
 	skippedCherryPicks = true
+	addEmptyPathspec = false

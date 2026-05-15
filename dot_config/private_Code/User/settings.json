@@ -14,7 +14,7 @@
     "sonarlint.automaticAnalysis": true,
     "todo-tree.filtering.includeHiddenFiles": true,
     "path-intellisense.showHiddenFiles": true,
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "on",
     "files.exclude": {
         "**/.git": false
     },
@@ -36,6 +36,7 @@
         "envman",
         "fsutils",
         "GLFW",
+        "hypr",
         "inodes",
         "libc",
         "loguru",

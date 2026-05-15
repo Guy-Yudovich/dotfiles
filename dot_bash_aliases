@@ -176,37 +176,20 @@ if [[ "${TERM}" == "xterm-kitty" ]]; then
 	alias kitty-config='conf-edit ~/.config/kitty/kitty.conf'
 fi
 
-# Hyprland
-if has-cli hyprctl; then
-	alias hyprctl-run='hyprctl dispatch exec'
-fi
-
 # Waybar	
 if has-cli waybar; then
-	alias waybar-toggle='pkill --signal SIGUSR1 waybar'
-	alias waybar-reload='pkill --signal SIGUSR2 waybar'
+	alias waybar-start='start-bg waybar'
 	alias waybar-kill='pkill waybar'
 	alias waybar-restart='waybar-kill; waybar-start'
-
-	# Hyprland
-	if has-cli hyprctl; then
-		alias waybar-start='hyprctl-run waybar > /dev/null 2>&1'
-	else
-		alias waybar-start='start-bg waybar'
-	fi
+	alias waybar-toggle='pkill --signal SIGUSR1 waybar'
+	alias waybar-reload='pkill --signal SIGUSR2 waybar'
 fi
 
 # QuickShell
 if has-cli quickshell; then
+	alias qs-start='start-bg quickshell'
 	alias qs-kill='pkill quickshell'
 	alias qs-restart='qs-kill; qs-start'
-	
-	# Hyprland
-	if has-cli hyprctl; then
-		alias qs-start='hyprctl-run quickshell > /dev/null 2>&1'
-	else
-		alias qs-start='start-bg quickshell'
-	fi
 fi
 
 # Punishments

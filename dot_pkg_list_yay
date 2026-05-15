@@ -100,3 +100,6 @@ qalculate-qt
 kalk
 calc
 llvm
+llvm21
+clang
+clang21

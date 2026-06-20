@@ -4,10 +4,10 @@
 -m
 --layout reverse
 # --raw
---style full
+# --style full
 --border="rounded"
---padding="1,2"
---margin="1,1"
+# --padding="1,2"
+# --margin="1,1"
 --height='~40%'
 --min-height='10+'
 --prompt="=>> "
@@ -43,10 +43,12 @@ fi
 # --bind="ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files || exit 0)"
 --color="border:#aaaaaa,label:#cccccc"
 --color="preview-border:#9999cc,preview-label:#ccccff"
---color="list-border:#669966,list-label:#99cc99"
+# --color="list-border:#669966,list-label:#99cc99"
 --color="input-border:#996666,input-label:#ffcccc"
 --color="header-border:#6699cc,header-label:#99ccff"
 --color="fg:-1,fg+:#d0d0d0,bg:-1,bg+:#262626"
 --color="hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#af5fff"
 --color="prompt:#23acdd,spinner:#af5fff,pointer:#87ff00,header:#87afaf"
 --color="border:#262626,label:#aeaeae,query:#d9d9d9"
+
+--tabstop=4

@@ -4,7 +4,7 @@
     "editor.fontLigatures": true,
     "editor.fontVariations": true,
     "terminal.integrated.fontLigatures.enabled": true,
-    "terminal.integrated.fontLigatures.featureSettings": "\"calt\" on, \"liga\" on",
+    "terminal.integrated.fontLigatures.featureSettings": "\"calt\" on, \"liga\" on, \"dlig\" on",
     "terminal.integrated.enableImages": true,
     "terminal.integrated.enableVisualBell": true,
     "terminal.integrated.gpuAcceleration": "on",
@@ -53,6 +53,7 @@
         "Quickshell",
         "Raylib",
         "RGFW",
+        "Rustbook",
         "secho",
         "subfolders",
         "Tendenseer",
@@ -143,4 +144,10 @@
     "vsicons.dontShowNewVersionMessage": true,
     "resharper.dataSharing.allowDataSharing": false,
     "github.copilot.nextEditSuggestions.eagerness": "auto",
+    "extensions.autoUpdateDelay": 48,
+    "extensions.autoUpdate": "off",
+    "mermaidChart.showGenerateDiagramCodeLens": false,
+    "workbench.colorCustomizations": {
+        "terminal.background": "#0e1415"
+    }
 }

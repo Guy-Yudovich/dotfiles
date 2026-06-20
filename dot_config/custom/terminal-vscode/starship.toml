@@ -1,0 +1,233 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# empty, directory, git branch, git status, language
+add_newline = true
+format = """
+$status$cmd_duration\
+$sudo\
+$directory$package\
+$vcs\
+
+
+$c\
+$cpp\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$fortran\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+[  ](fg:#769ff0)\
+
+
+[  ](fg:#212736)\
+[    ](fg:#1d2230) \
+\n$character
+"""
+# $username\
+# $hostname\
+# $localip\
+# $shlvl\
+# $singularity\
+# $kubernetes\
+# $vcsh\
+# $fossil_branch\
+# $fossil_metrics\
+# $git_metrics\
+# $hg_branch\
+# $hg_state\
+# $pijul_channel\
+# $docker_context\
+# $buf\
+# $nix_shell\
+# $conda\
+# $meson\
+# $spack\
+# $memory_usage\
+# $aws\
+# $gcloud\
+# $openstack\
+# $azure\
+# $nats\
+# $direnv\
+# $env_var\
+# $mise\
+# $crystal
+# $jobs\
+# $battery\
+# $time\
+# $os\
+# $container\
+# $netns\
+# $shell\
+
+[status]
+disabled = false
+format = '[\[ $symbol $common_meaning$signal_name$maybe_int \]]($style) '
+map_symbol = true
+failure_style = 'bold fg:196'
+# success_style = 'bold fg:046'
+# success_symbol = '󰄬'
+sigint_symbol = ''
+
+[cmd_duration]
+format = '\[[$duration]($style)\] '
+
+[fill]
+disabled = false
+style = "bold fg:#212736"
+symbol = '󱘹'
+
+[sudo]
+disabled = false
+style = ''
+format = '[$symbol ]($style)'
+symbol = '🧙'
+
+[directory]
+style = 'bold fg:#eeeeee'
+format = '[$read_only]($read_only_style)[$path]($style) '
+read_only_style = 'bold fg:#eeeeee'
+read_only = ' '
+
+[package]
+style = 'bold fg:#FFCA28'
+format = '[$symbol$version]($style) '
+
+[vcs]
+disabled = false
+order = [ "git", "hg", "pijul", "fossil" ]
+git_modules = '$git_branch[\[](fg:#769ff0) $git_status$git_metrics[\]](fg:#769ff0) $git_commit$git_state'
+
+[git_branch]
+style = 'bold fg:165'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_status]
+style = 'fg:#769ff0'
+format = '[$all_status$ahead_behind]($style)'
+conflicted = '[!= ](bold fg:196)'
+ahead = '[󰶼 ](bold fg:164)'
+behind = '[󰶹 ](bold fg:164)'
+diverged = '[󰶼󰶹 ](bold fg:164)'
+up_to_date = '[󰄬 ](bold fg:046)'
+untracked = '[ ](bold fg:250)'
+modified = '[ ](bold fg:190)'
+staged = '[󰐕 ](bold fg:082)'
+renamed = '[󰄾 ](bold fg:220)'
+deleted = '[󰆴 ](bold fg:160)'
+
+[git_metrics]
+disabled = false
+format = '([▴$added]($added_style))[/](dimmed black)([▿$deleted]($deleted_style)) '
+added_style = 'italic dimmed green'
+deleted_style = 'italic dimmed red'
+ignore_submodules = true
+
+[git_commit]
+style = 'bold fg:040'
+format = '[\($hash$tag\)]($style) '
+
+[git_state]
+style = 'bold fg:178'
+format = '[\($state( $progress_current/$progress_total)\)]($style) '
+
+[character]
+success_symbol = '[󰅂](bold cyan)'
+error_symbol = '[󰅂](bold red)'
+
+[c]
+style = 'fg:#769ff0'
+format = '[$symbol($version(-$name) )]($style)'
+
+[cpp]
+style = 'fg:#769ff0'
+format = '[$symbol($version(-$name) )]($style)'
+
+[cmake]
+style = 'fg:#769ff0'
+format = '[$symbol($version )]($style)'
+
+[dart]
+style = 'fg:#769ff0'
+format = '[$symbol($version )]($style)'
+
+[dotnet]
+style = 'fg:#769ff0'
+format = '[$symbol($version )(🎯 $tfm )]($style)'
+
+[gradle]
+style = 'fg:#769ff0'
+format = '[$symbol($version )]($style)'
+
+[java]
+style = 'fg:#769ff0'
+format = '[${symbol}(${version} )]($style)'
+
+[kotlin]
+style = 'fg:#769ff0'
+format = '[$symbol($version )]($style)'
+
+[lua]
+style = 'fg:#769ff0'
+format = '[$symbol($version )]($style)'
+
+[nodejs]
+style = 'fg:#769ff0'
+format = '[$symbol($version )]($style)'
+
+[python]
+style = 'fg:#769ff0'
+symbol = '[󱔎](bold fg:yellow) '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[rust]
+style = 'fg:#769ff0'
+format = '[$symbol($version )]($style)'
+
+[typst]
+style = 'fg:#769ff0'
+format = '[$symbol($version )]($style)'
+
+[custom.whoami] # example custom module
+when = true
+command = "echo 'text'"

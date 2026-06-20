@@ -148,6 +148,11 @@
     "extensions.autoUpdate": "off",
     "mermaidChart.showGenerateDiagramCodeLens": false,
     "workbench.colorCustomizations": {
-        "terminal.background": "#0e1415"
-    }
+        // "terminal.background": "#0e1415"
+    },
+    "terminal.integrated.env.linux": {
+        "VSCODE_TERM": "true",
+    },
+    "update.titleBar": false,
+    "update.showPostInstallInfo": true,
 }

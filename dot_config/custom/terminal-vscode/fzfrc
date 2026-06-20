@@ -1,0 +1,39 @@
+#!/bin/bash
+# See https://vitormv.github.io/fzf-themes for interactive designer
+
+-m
+--layout reverse
+--border="rounded"
+--height='~40%'
+--min-height='10+'
+--prompt="=>> "
+--marker="◆"
+--pointer="󰜴"
+
+--border-label=" fzf "
+--border-label-pos="0"
+--input-label=" Input "
+--header-label=" File Type "
+
+--preview-window="border-rounded"
+
+--bind 'result:transform-list-label:
+if [[ -z $FZF_QUERY ]]; then
+	echo " $FZF_MATCH_COUNT items "
+else
+	echo " $FZF_MATCH_COUNT matches for [$FZF_QUERY] "
+fi
+'
+--bind 'focus:transform-preview-label:
+[[ -n {} ]] && printf " Previewing [%s] " {}
+'
+--color="border:#aaaaaa,label:#cccccc"
+--color="preview-border:#9999cc,preview-label:#ccccff"
+--color="input-border:#996666,input-label:#ffcccc"
+--color="header-border:#6699cc,header-label:#99ccff"
+--color="fg:-1,fg+:#d0d0d0,bg:-1,bg+:#262626"
+--color="hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#af5fff"
+--color="prompt:#23acdd,spinner:#af5fff,pointer:#87ff00,header:#87afaf"
+--color="border:#262626,label:#aeaeae,query:#d9d9d9"
+
+--tabstop=4

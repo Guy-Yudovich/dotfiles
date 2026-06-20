@@ -46,9 +46,16 @@ HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="false"
 # COMPLETION_WAITING_DOTS="false"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-export FZF_DEFAULT_OPTS_FILE="$HOME/.fzfrc"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+export FZF_DEFAULT_OPTS_FILE="$HOME/.config/custom/terminal/fzfrc"
+export STARSHIP_CONFIG="$HOME/.config/custom/terminal/starship.toml"
+
+if [[ -n $VSCODE_TERM && $VSCODE_TERM == "true" ]]; then
+	export FZF_DEFAULT_OPTS_FILE="$HOME/.config/custom/terminal-vscode/fzfrc"
+	export STARSHIP_CONFIG="$HOME/.config/custom/terminal-vscode/starship.toml"
+fi
+
 
 zstyle ':omz:update' mode auto      # update automatically without asking
 zstyle ':omz:update' frequency 7

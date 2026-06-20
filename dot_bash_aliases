@@ -35,11 +35,11 @@ alias aliases-apply='echo "✅ applying aliases" && source ~/.bash_aliases'
 alias aliases-edit='conf-edit ~/.bash_aliases && aliases-apply'
 alias shrc-apply='echo "✅ applying shrc" && start-fg bash'
 alias shrc-edit='conf-edit ~/.bashrc && shrc-apply'
-alias fzfrc-edit='conf-edit ~/.fzfrc'
-alias starship-config='conf-edit ~/.config/starship.toml'
 alias chezmoi='chezmoi --interactive'
 alias chezmoish='start-ntw chezmoi cd'
 alias chezmoish-here='start-fg chezmoi cd'
+alias config-open='code -n ~/.config'
+alias config-open-custom='code -n ~/.config/custom'
 function run-source-rm { local temp_file="$(mktemp -u)"; $@ > temp_file && source temp_file; rm -f temp_file ;}
 function cd-run { (cd "$1" && "${@:2}") ;}
 
@@ -80,7 +80,7 @@ alias battery-info='acpi -ba'
 alias storage-info='(echo "[ >=> >=> { DUST } <=< <=< ]\n" && sudo dust -C -d 1 / && echo "\n[ >=> >=> { DUF } <=< <=< ]\n" && duf)'
 function sysupgrade {
 	clear
-	
+
 	bash -c 'read -p "Press Enter to start upgrade for firmware... (ctrl+d to skip)"' \
 		|| (echo "\nSkipping" && exit 1) \
 		&& echo "-- Upgrading firmware..." \
@@ -95,14 +95,14 @@ function sysupgrade {
 		&& start-ntw --hold yay -Syyu
 
 	echo "\n"
-	
+
 	bash -c 'read -p "Press Enter to start upgrade for flatpak packages... (ctrl+d to skip)"' \
 		|| (echo "\nSkipping" && exit 1) \
 		&& echo "-- Upgrading flatpak packages..." \
 		&& start-ntw --hold flatpak update
 
 	echo "\n"
-	
+
 	bash -c 'read -p "Press Enter to start reboot... (ctrl+d to skip)"' \
 		|| (echo "\nSkipping" && exit 1) \
 		&& echo "-- Rebooting..." \
@@ -176,7 +176,7 @@ if [[ "${TERM}" == "xterm-kitty" ]]; then
 	alias kitty-config='conf-edit ~/.config/kitty/kitty.conf'
 fi
 
-# Waybar	
+# Waybar
 if has-cli waybar; then
 	alias waybar-start='start-bg waybar'
 	alias waybar-kill='pkill waybar'

@@ -159,8 +159,8 @@ deleted = '[󰆴 ](bold fg:160)'
 [git_metrics]
 disabled = false
 format = '([▴$added]($added_style))[/](dimmed black)([▿$deleted]($deleted_style)) '
-added_style = 'italic dimmed green'
-deleted_style = 'italic dimmed red'
+added_style = 'dimmed bold green'
+deleted_style = 'dimmed bold red'
 ignore_submodules = true
 
 [git_commit]

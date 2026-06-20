@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2215,SC2288,SC2016
 # See https://vitormv.github.io/fzf-themes for interactive designer
 
 -m

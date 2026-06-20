@@ -25,7 +25,7 @@ export PAGER='less --ignore-case --quit-on-intr --use-color --wordwrap --raw-con
 export MANPAGER="${PAGER}"
 alias pager="${PAGER}"
 function pagify { "$@" | pager ;}
-alias less="${PAGER} -N"
+alias less="${PAGER}"
 function lessify { "$@" | less ;}
 
 # Aliases & Shortcuts & RC-files Management
@@ -110,9 +110,9 @@ function sysupgrade {
 }
 
 # Docs Navigation
-function help { "$@" --help 2>&1 | less ;}
+function help { "$@" --help 2>&1 | less -N ;}
 function tldr { local target="${@:-tldr}"; command tldr -m "${target}" | bat-plain --language=markdown | less ;}
-function cheatsheet { cht.sh "$@" | less -n ;}
+function cheatsheet { cht.sh "$@" | less ;}
 function cheatshell { start-bg kitty cht.sh --shell "$1" ;}
 
 # Navigation
@@ -147,9 +147,13 @@ alias lzgit='lazygit'
 alias gdh='git diff HEAD'
 
 # Periodic Execution
-alias watch='watch -n 1 ' # The space at the end enables using aliases
+alias watch='watch -c -n 1 ' # The space at the end enables using aliases
 alias watch-f='watch -n 0.1 ' # The space at the end enables using aliases
 alias watch-s='watch -n 10 ' # The space at the end enables using aliases
+
+alias hwatch='command hwatch -c -n 1 ' # The space at the end enables using aliases
+alias hwatch-f='command hwatch -c -n 0.1 ' # The space at the end enables using aliases
+alias hwatch-s='command hwatch -c -n 10 ' # The space at the end enables using aliases
 
 # Text Transformation
 alias lowercase="awk '{print tolower(\$0)}'"
@@ -164,7 +168,7 @@ alias wait-for-continue="bash -c 'read -p \"Press Enter to continue...\"'"
 function files-here { start-bg dolphin --new-window . ;}
 function copyfile { cat "$@" | wl-copy ;}
 function copypath { pwd "$@" | wl-copy ;}
-alias history-l="history | less -n"
+alias history-l="history | less"
 function has-cli { if which "$1" > /dev/null 2>&1 && return 0 || return 1 ;}
 function cat-xargs { cat "$1" | xargs echo ;}
 alias timestamp='date +"%Y-%m-%d %H:%M:%S"'
@@ -228,3 +232,5 @@ alias pyvenvc312='clear && python3.12 -m venv .venv && pyvenvc'
 alias pyvenvc314='clear && python3.14 -m venv .venv && pyvenvc'
 alias rm-pycache='rm -rf ./**/__pycache__; rm -rf ./**/.cache/uv; rm -rf ./**/.cache/ruff; rm -rf ./**/.cache/mypy; rm -rf ./**/.cache/pytest; rm -rf ./**/.uv_cache; rm -rf ./**/.ruff_cache; rm -rf ./**/.mypy_cache; rm -rf ./**/.pytest_cache'
 alias rm-pyvenv='deactivate; rm -rf ./**/.venv; rm-pycache'
+alias uv-rebuild='rm -rf dist && uv build'
+alias uv-publish='uv-rebuild && uv publish'

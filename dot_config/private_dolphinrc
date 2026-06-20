@@ -7,12 +7,12 @@ ShowOpenTerminal=false
 ViewFont=Noto Sans,10,-1,0,400,0,0,0,0,0,0,0,0,0,0,1
 
 [General]
+AlwaysShowTabBar=true
 BrowseThroughArchives=true
 DoubleClickViewAction=none
 FilterBar=true
 OpenExternallyCalledFolderInNewTab=true
 RememberOpenedTabs=false
-ShowFullPath=true
 ShowFullPathInTitlebar=true
 SortingChoice=CaseInsensitiveSorting
 UseTabForSwitchingSplitView=true

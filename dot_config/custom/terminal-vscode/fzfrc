@@ -7,7 +7,7 @@
 --border="rounded"
 --height='~40%'
 --min-height='10+'
---prompt="=>> "
+--prompt="󰅂 "
 --marker="◆"
 --pointer="󰜴"
 
@@ -28,13 +28,13 @@ fi
 --bind 'focus:transform-preview-label:
 [[ -n {} ]] && printf " Previewing [%s] " {}
 '
---color="border:#aaaaaa,label:#cccccc"
 --color="preview-border:#9999cc,preview-label:#ccccff"
+--color="scrollbar:#669966"
 --color="input-border:#996666,input-label:#ffcccc"
 --color="header-border:#6699cc,header-label:#99ccff"
---color="fg:-1,fg+:#d0d0d0,bg:-1,bg+:#262626"
+--color="fg:-1,fg+:#d0d0d0,bg:-1,bg+:#3b484d,gutter:#3b414d"
 --color="hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#af5fff"
 --color="prompt:#23acdd,spinner:#af5fff,pointer:#87ff00,header:#87afaf"
---color="border:#262626,label:#aeaeae,query:#d9d9d9"
+--color="border:#586173,label:#aeaeae,query:#d9d9d9"
 
 --tabstop=4

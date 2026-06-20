@@ -172,7 +172,7 @@ style = 'bold fg:178'
 format = '[\($state( $progress_current/$progress_total)\)]($style) '
 
 [character]
-success_symbol = '[󰅂](bold cyan)'
+success_symbol = '[󰅂](bold fg:#23acdd)'
 error_symbol = '[󰅂](bold red)'
 
 [c]

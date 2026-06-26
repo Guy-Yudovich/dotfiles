@@ -29,21 +29,28 @@
         "endoflife",
         "envman",
         "fsutils",
+        "FURB",
         "GLFW",
         "grayscale",
         "hypr",
         "inodes",
+        "kwargs",
         "libc",
         "libcpp",
         "loguru",
         "mypy",
+        "namedtuple",
         "nohup",
+        "noqa",
+        "Pathlib",
         "pavucontrol",
         "Pipewire",
         "pkill",
         "pubspec",
         "pulseaudio",
         "pydantic",
+        "Pyflakes",
+        "Pylint",
         "pytest",
         "pyvenv",
         "Quickshell",
@@ -55,6 +62,7 @@
         "Rustbook",
         "sdist",
         "secho",
+        "sqlalchemy",
         "subfolders",
         "Tendenseer",
         "tomli",
@@ -105,6 +113,9 @@
     },
     "github.copilot.nextEditSuggestions.eagerness": "auto",
     "github.copilot.nextEditSuggestions.enabled": true,
+    "gitlab.duoAgentPlatform.enabled": false,
+    "gitlab.duoChat.enabled": false,
+    "gitlab.duoCodeSuggestions.enabled": false,
     "indentRainbow.indicatorStyle": "light",
     "inlineChat.notebookAgent": true,
     "Lua.hint.enable": true,
@@ -145,6 +156,71 @@
     "python.testing.pytestEnabled": true,
     "redhat.telemetry.enabled": false,
     "resharper.dataSharing.allowDataSharing": false,
+    "ruff.lint.ignore": [
+        "D100", // Missing docstring in public module
+        "D101", // Missing docstring in public class
+        "D102", // Missing docstring in public method
+        "D103", // Missing docstring in public function
+        "D104", // Missing docstring in public package
+        "D105", // Missing docstring in magic method
+        "D106", // Missing docstring in public nested class
+        "D107", // Missing docstring in public init
+        "D203", // Incompatible with D211
+        "D212", // Incompatible with D213
+        "FURB110", // Fix may modify behavior
+        "RET504", // Forbids assigning value to variable right before returning the variable, which is actually a common pattern in programming for ease of debugging.
+        "TC001", // Move first-party imports to type-checking block - python 3.15+ supports lazy imports, making this rule unnecessary
+        "TC002", // Move third-party imports to type-checking block - python 3.15+ supports lazy imports, making this rule unnecessary
+        "TC003", // Move standard library imports to type-checking block - python 3.15+ supports lazy imports, making this rule unnecessary
+        "TD002", // Missing todo author
+    ],
+    "ruff.lint.select": [
+        "A", // Protects the Builtin Module
+        "ANN", // Enforce Annotations Usage
+        "ARG", // Unused Function Arguments
+        "ASYNC", // Async
+        "B", // Bug Prevention
+        "COM", // Comma Related Merge Conflict Prevention
+        "C4", // Comprehensions
+        "C90", // Complexity
+        "D", // Docstring Conventions
+        "E", // Code Style (Errors)
+        "EM", // Error Messages
+        "ERA", // Commented-Out Code
+        "F", // Pyflakes
+        "FA", // Future Annotations (i.e. `from __future__ import annotations`)
+        "FURB", // Miscellaneous (mostly related to code conciseness)
+        "I", // Import Order
+        "ICN", // Implicit Conventions (e.g. `import pandas as pd` instead of `import pandas`)
+        "INP", // Enforce __init__.py Presence in Packages
+        "ISC", // Implicit String Concatenation
+        "LOG", // Logging
+        "G", // Logging Format (specifically for the `logging` module)
+        "N", // Naming Conventions
+        "PD", // Pandas
+        "PGH", // Ignore Specific Rules Instead of Entire Linter (i.e. use specific rule codes in `# noqa` or `# type: ignore`)
+        "PIE", // Miscellaneous (mostly related to code redundancy)
+        "PL", // Pylint
+        "PT", // Pytest
+        "PTH", // Prefer Pathlib Over OS Module
+        "PYI", // .pyi Stub Files
+        "Q", // Quotes
+        "RET", // Return Statement
+        "RSE", // Exception Raising
+        "RUF", // Ruff-Specific Rules
+        "S", // Security
+        "SIM", // Code Simplicity and Readability
+        "SLF", // Forbids Private Member Access
+        "SLOT", // Requires `__slots__` For Inheritance From Certain Classes
+        "TC", // Type Checking
+        "TD", // To-Do Comments
+        "TID", // Tidy Imports
+        "T10", // Forbid Debug-only Code (e.g. `breakpoint()`)
+        "T20", // Prefer Logging Over Print Statements
+        "TRY", // Exception Handling
+        "UP", // Upgrade Checks and Deprecation Warnings
+        "W", // Code Style (Warnings)
+    ],
     "rust-analyzer.completion.fullFunctionSignatures.enable": true,
     "rust-analyzer.inlayHints.bindingModeHints.enable": true,
     "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
@@ -153,7 +229,6 @@
     "rust-analyzer.inlayHints.discriminantHints.enable": "always",
     "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "always",
     "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
-    "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
     "rust-analyzer.inlayHints.implicitDrops.enable": true,
     "rust-analyzer.inlayHints.implicitSizedBoundHints.enable": true,
     "rust-analyzer.inlayHints.parameterHints.missingArguments.enable": true,
@@ -165,6 +240,12 @@
     "sonarlint.focusOnNewCode": false,
     "sonarlint.rules": {
         "python:S125": {
+            "level": "off"
+        },
+        "python:S3516": {
+            "level": "off"
+        },
+        "python:S3626": {
             "level": "off"
         }
     },
@@ -181,7 +262,7 @@
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.hideOnStartup": "whenEmpty",
     "terminal.integrated.scrollback": 1000000,
-    "terminal.integrated.sendKeybindingsToShell": true,
+    "terminal.integrated.sendKeybindingsToShell": false,
     "terminal.integrated.shellIntegration.history": 1000,
     "terminal.integrated.stickyScroll.enabled": false,
     "terminal.integrated.suggest.insertTrailingSpace": true,
@@ -194,7 +275,9 @@
     "vsicons.dontShowNewVersionMessage": true,
     "window.restoreWindows": "none",
     "workbench.colorCustomizations": {
-        // "terminal.background": "#0e1415"
+        // "terminal.background": "#0e1415",
+        "editorInlayHint.background": "#3c455c11",
+        "editorInlayHint.foreground": "#63636366"
     },
     "workbench.colorTheme": "One Dark Pro Mix",
     "workbench.editorAssociations": {

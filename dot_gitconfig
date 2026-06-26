@@ -6,6 +6,7 @@
 [core]
 	editor = kitty --class "terminal-popup-tui--git-editor" micro
 	pager = less --ignore-case --quit-on-intr --use-color --wordwrap --raw-control-chars
+	excludesfile = ~/.gitignore
 [credential]
 	helper = cache
 [push]

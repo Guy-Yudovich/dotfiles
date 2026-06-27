@@ -44,6 +44,7 @@
         "libc",
         "libcpp",
         "loguru",
+        "minigrep",
         "mypy",
         "namedtuple",
         "nohup",
@@ -89,6 +90,18 @@
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.matchBrackets": "near",
+    "editor.tokenColorCustomizations": {
+        "[One Dark Pro Mix]": {
+            "textMateRules": [],
+        },
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "[One Dark Pro Mix]": {
+            "rules": {
+                "lifetime": "#9d8352",
+            }
+        }
+    },
     "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.wordWrap": "on",
     "editor.wordWrapColumn": 120,
@@ -323,8 +336,10 @@
     "window.restoreWindows": "none",
     "workbench.colorCustomizations": {
         // "terminal.background": "#0e1415",
-        "editorInlayHint.background": "#3c455c11",
-        "editorInlayHint.foreground": "#63636366"
+        "[One Dark Pro Mix]": {
+            "editorInlayHint.background": "#3c455c11",
+            "editorInlayHint.foreground": "#63636366"
+        }
     },
     "workbench.colorTheme": "One Dark Pro Mix",
     "workbench.editorAssociations": {
@@ -334,5 +349,6 @@
         "*.qrc": "qt-core.qrcEditor"
     },
     "workbench.iconTheme": "vscode-icons",
-    "workbench.preferredDarkColorTheme": "One Dark Pro Mix"
+    "workbench.preferredDarkColorTheme": "One Dark Pro Mix",
+    "workbench.editor.empty.hint": "hidden"
 }

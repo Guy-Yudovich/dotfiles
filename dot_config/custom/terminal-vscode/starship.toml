@@ -135,7 +135,7 @@ format = '[$symbol$version]($style) '
 
 [vcs]
 disabled = false
-order = [ "git", "hg", "pijul", "fossil" ]
+order = ["git", "hg", "pijul", "fossil"]
 git_modules = '$git_branch[\[](fg:#769ff0) $git_status$git_metrics[\]](fg:#769ff0) $git_commit$git_state'
 
 [git_branch]
@@ -151,10 +151,12 @@ behind = '[󰶹 ](bold fg:164)'
 diverged = '[󰶼󰶹 ](bold fg:164)'
 up_to_date = '[󰄬 ](bold fg:046)'
 untracked = '[ ](bold fg:250)'
+stashed = '[󰶡 ](bold fg:39)'
 modified = '[ ](bold fg:190)'
 staged = '[󰐕 ](bold fg:082)'
 renamed = '[󰄾 ](bold fg:220)'
 deleted = '[󰆴 ](bold fg:160)'
+
 
 [git_metrics]
 disabled = false

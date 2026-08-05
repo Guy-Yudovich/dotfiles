@@ -145,6 +145,7 @@ delalias lsdl # unused
 # Git
 alias lzgit='lazygit'
 alias gdh='git diff HEAD'
+alias gc-='gco -'
 
 # Periodic Execution
 alias watch='watch -c -n 1 ' # The space at the end enables using aliases
@@ -232,5 +233,23 @@ alias pyvenvc312='clear && python3.12 -m venv .venv && pyvenvc'
 alias pyvenvc314='clear && python3.14 -m venv .venv && pyvenvc'
 alias rm-pycache='rm -rf ./**/__pycache__; rm -rf ./**/.cache/uv; rm -rf ./**/.cache/ruff; rm -rf ./**/.cache/mypy; rm -rf ./**/.cache/pytest; rm -rf ./**/.uv_cache; rm -rf ./**/.ruff_cache; rm -rf ./**/.mypy_cache; rm -rf ./**/.pytest_cache'
 alias rm-pyvenv='deactivate; rm -rf ./**/.venv; rm-pycache'
-alias uv-rebuild='rm -rf dist && uv build'
+alias uv-rebuild='uv build --clear'
 alias uv-publish='uv-rebuild && uv publish'
+alias uv-list='uv pip list | less'
+alias uv-tree='uv pip tree | less'
+alias pytest='pytest -lvvv -rA --log-cli-level=INFO --full-trace'
+alias uvx308='uv tool run --python 3.8'
+alias uvx309='uv tool run --python 3.9'
+alias uvx312='uv tool run --python 3.12'
+alias uvx314='uv tool run --python 3.14'
+alias uvp308='uvx308 python'
+alias uvp309='uvx309 python'
+alias uvp312='uvx312 python'
+alias uvp314='uvx314 python'
+
+# Environment Paths
+export JAVA_HOME="/usr/lib/jvm/default"
+export ANDROID_HOME="${HOME}/Android/Sdk"
+export PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin"
+export PATH="${PATH}:${ANDROID_HOME}/platform-tools"
+export PATH="${PATH}:${HOME}/.local/share/pnpm/bin"

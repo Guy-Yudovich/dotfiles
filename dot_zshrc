@@ -85,8 +85,3 @@ if [[ -f ~/.zsh_aliases ]]; then
 	source ~/.zsh_aliases
 fi
 alias history-edit="edit ~/.zsh_history"
-
-export JAVA_HOME="/usr/lib/jvm/default"
-export ANDROID_HOME="${HOME}/Android/Sdk"
-export PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin"
-export PATH="${PATH}:${ANDROID_HOME}/platform-tools"

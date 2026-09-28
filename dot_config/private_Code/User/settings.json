@@ -3,7 +3,8 @@
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
     },
     "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff"
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "diffEditor.ignoreTrimWhitespace": false
     },
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -381,5 +382,22 @@
     "autoDocstring.startOnNewLine": true,
     "ruff.configurationPreference": "filesystemFirst",
     "git.rebaseWhenSync": true,
-    "git.allowNoVerifyCommit": true
+    "git.allowNoVerifyCommit": true,
+    "yaml.disableSchemaDetection": [
+        "**/docker-compose.yml",
+        "**/docker-compose.yaml",
+        "**/docker-compose.*.yml",
+        "**/docker-compose.*.yaml",
+        "**/compose.yml",
+        "**/compose.yaml",
+        "**/compose.*.yml",
+        "**/compose.*.yaml",
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml"
+    ],
+    "githubPullRequests.terminalLinksHandler": "github"
 }
